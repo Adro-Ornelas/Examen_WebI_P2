@@ -1,0 +1,172 @@
+:root {
+    --topbar-color: #919191;
+    --sidebar-color: #919191;
+    --text-color: #fff;
+    --menu-color: #fff;
+    --menu-hover-color: #919191;
+    --menu-hover-background: #fff;
+    --menu-background-selected: #fff;
+    --menu-selected: #919191;
+}
+
+
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0rem 0.45rem 1.27rem;
+    border-bottom: 1px solid var(--topbar-color);
+    position: fixed;
+    background-color: var(--topbar-color);
+    top: 0;
+    left: 0;
+    min-height: 5rem;
+}
+
+.izquierda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.derecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.derecha a{
+    font-size: 1rem;
+    font-family: "Momo Trust Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: 1rem;
+}
+
+
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand .nombre {
+    font-size: 3rem;
+    font-family: "Ms Madi", cursive;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.menu-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu {
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.menu div {
+    width: 100%;
+    height: 0.10rem;
+    background-color: var(--menu-color);
+    transition: all 0.2s;
+}
+
+.menu.menu-toggle div:first-child {
+    width: 65%;
+    transform: rotate(-45deg) translate(-0.5rem, -0.1rem);
+}
+
+.menu.menu-toggle div:last-child {
+    width: 65%;
+    transform: rotate(45deg) translate(-0.5rem, 0rem);
+}
+
+
+.sidebar {
+    margin-top: 3rem;
+    width: 0rem;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--sidebar-color);
+    overflow-y: auto;
+    background: var(--sidebar-gradient);
+    background-color: var(--sidebar-color);
+    transition: width 0.5s ease;
+}
+
+.sidebar.menu-toggle {
+    width: 18.75rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem;
+    text-decoration: none;
+    margin: 1rem 0.7rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.sidebar a:hover {
+    color: var(--menu-hover-color);
+    background-color: var(--menu-hover-background);
+}
+
+.sidebar a.selected {
+    background-color: var(--menu-background-selected);
+    color: var(--menu-selected);
+}
+
+.sidebar img {
+    width: 1.6rem;
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+
+}
